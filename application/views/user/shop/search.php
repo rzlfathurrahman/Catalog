@@ -18,32 +18,6 @@
 		</div>
 		<div class="row flex-row-reverse justify-content-center">
 
-			<!-- right bar -->
-			<div class="col-lg-3">
-				<div class="left_sidebar_area">
-					<aside class="left_widgets cat_widgets">
-						<div class="l_w_title">
-							<h3>Browse Categories</h3>
-						</div>
-						<div class="widgets_inner">
-							<ul class="list">
-								<li>
-									<a href="<?= base_url('shop'); ?>">All Product</a>
-								</li>
-								<?php foreach ($kategori as $k): ?>
-									<?php if ($k['status'] != 0): ?>
-										<li>
-											<a href="<?= base_url('shop'); ?>/<?= $k['link'] ?>"><?= $k['kategori']; ?></a>
-										</li>
-									<?php endif; ?>
-								<?php endforeach; ?>
-							</ul>
-						</div>
-					</aside>
-				</div>
-			</div>
-			<!-- end right bar -->
-
 			<!-- left bar -->
 			<div class="col-lg-9">
 
