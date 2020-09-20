@@ -27,6 +27,7 @@
 
                 <div class="form-group">
                   <label for="password">Password</label>
+                  <input type="hidden" name="password_lama" value="<?= $d->password  ?>">
                   <input type="text" name="password" class="form-control" id="password"   placeholder="">
                   <div class="font-weight-bold text-warning ml-2 mt-2"><u>Jangan diisi jika tidak ingin ganti password !</u></div>
                   <?= form_error('password', '<div class="font-weight-bold text-danger ml-2 mt-2">', '</div>'); ?>
