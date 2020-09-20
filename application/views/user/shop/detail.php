@@ -65,7 +65,7 @@
 					</ul>
 					<p><?= $d->keterangan; ?></p>
 					<?php if ($d->stok != 0): ?>
-						<?= anchor('shop/addToChart/'.$d->id,'<div class="btn btn-outline-primary"><i class="lnr lnr lnr-cart"></i> Tambah Ke Keranjang</div>'); ?>
+						<?= anchor('shop/addToChart/'.$d->id,'<div class="btn btn-primary"><i class="lnr lnr lnr-cart"></i> Tambah Ke Keranjang</div>'); ?>
 					<?php endif; ?>
 					<?= anchor('shop/','<div class="btn btn-outline-danger">Kembali</div>'); ?>
 				</div>
