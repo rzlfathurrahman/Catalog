@@ -94,6 +94,9 @@ $route['users/tambahAksi'] = 'admin/users/tambahUserAksi';
 $route['users/update/(:num)'] = 'admin/users/updateUser/$1';
 $route['users/delete/(:num)'] = 'admin/users/deleteUser/$1';
 $route['users/updateAksi'] = 'admin/users/updateUserAksi';
+$route['users/deactivateUser/(:num)'] = 'admin/users/deactivateUser/$1';
+$route['users/activateUser/(:num)'] = 'admin/users/activateUser/$1';
+
 
 // search pada controller shop
 $route['search'] = 'shop/search';
