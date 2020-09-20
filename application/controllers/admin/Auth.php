@@ -39,7 +39,7 @@ class Auth extends CI_Controller {
 
 
 	    $user = $this->db->get_where('users',['username' => $username])->row_array();
-	    
+
 	    // usernya ada
 	    if ($user) {
 	    	//jika usernya aktif
@@ -62,7 +62,7 @@ class Auth extends CI_Controller {
 	    	}else{
 	    		$this->session->set_flashdata('pesan','
 					<script>
-						alert("User ini sedang tidak aktif !");
+						alert("Akun ini tidak aktif ! Silahkan minta ke user lain untuk mengaktifkannya :) ");
 					</script>
 				');
 	    		redirect('admin/auth','refresh');
