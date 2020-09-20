@@ -24,10 +24,10 @@
 									<div class="f_p_img">
 										<img class="img-fluid" src="<?= base_url('assets/uploads/'); ?><?= $p['gambar']; ?>" alt="">
 										<div class="p_icon">
-											<a href="<?= base_url('shop/addToChart')  ?><?= $p['id']; ?>">
+											<a href="<?= base_url('shop/addToChart/');  ?><?= $p['id']; ?>">
 												<i class="lnr lnr-cart"></i>
 											</a>
-											<a href="<?= base_url('shop/details')  ?><?= $p['id']; ?>">
+											<a href="<?= base_url('shop/details/');  ?><?= $p['id']; ?>">
 												<i class="lnr lnr-eye"></i>
 											</a>
 										</div>
