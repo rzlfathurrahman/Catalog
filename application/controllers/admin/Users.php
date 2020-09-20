@@ -148,7 +148,7 @@ class Users extends CI_Controller
 			];
 			$where = array('id' => $id);
 			$this->model_produk->update_data($where, $data, "users");
-			$this->session->set_flashdata('pesan', '<script>alert("Data berhasil diupdate !");</script>');
+			$this->session->set_flashdata('message', '<script>alert("Data berhasil diupdate !");</script>');
 			redirect('users');
 		}
 	}
