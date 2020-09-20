@@ -16,7 +16,7 @@ class Model_invoice extends CI_Model
 			'tgl_pesan'		=>	date('Y-m-d H:i:s'),
 			'batas_bayar'	=>	date('Y-m-d H:i:s',mktime(date('H'),date('i'),date('s'),date('m'),date('d') + 1 ,date('Y'))),
 		];
-		$a = $this->db->insert('invoice' ,$invoice);
+		$this->db->insert('invoice' ,$invoice);
 		// var_dump ($a);exit();
 		$id_invoice = $this->db->insert_id();
 
