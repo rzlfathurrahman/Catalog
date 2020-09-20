@@ -42,6 +42,7 @@
 					<thead>
 						<tr>
 							<th scope="col">Produk</th>
+							<th scope="col">Gambar</th>
 							<th scope="col">Jumlah Produk</th>
 							<th scope="col">Total</th>
 						</tr>
@@ -50,6 +51,9 @@
 						<tr>
 							<td>
 								<p><?= $data['nama_produk']; ?></p>
+							</td>
+							<td>
+								<img src="<?= base_url('assets/uploads/');  ?><?= $data['gambar'];  ?>" alt="">
 							</td>
 							<td>
 								<h5><?= $data['jumlah']; ?></h5>
