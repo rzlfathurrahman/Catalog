@@ -111,8 +111,14 @@ class Users extends CI_Controller
 
 	public function updateUserAksi()
 	{
-		$password_lama = $this->input->post('password_lama');
-		$password_baru = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+		// cek apakah user mengganti password atau tidak
+		if($this->input->post('password') == null){
+			$password = $this->input->post('password_lama');
+		}else{
+			$password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+		}
+		
+
 		$id = $this->input->post('id');
 		$nama = $this->input->post('nama');
 		$is_active = $this->input->post('is_active');
