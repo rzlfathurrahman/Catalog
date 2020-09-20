@@ -193,6 +193,26 @@ class Users extends CI_Controller
 			redirect('users','refresh');
 		}
 	}
+
+	public function activateUser($id)
+	{
+		$query = $this->db->query("SELECT `is_active` FROM users WHERE id = $id")->result_array();
+		$is_active = $query[0]['is_active'];
+
+		// cek apakah user berstatus aktif atau tidak
+		if ($is_active == 0 && $this->session->userdata('user_id') != $id) {
+			$query = $this->db->query("UPDATE `users` SET `is_active` = '1' WHERE `users`.`id` = $id;");
+			if ($query) {
+				$this->session->set_flashdata('message', '<script>alert("User berhasil diaktifkan !")</script>');
+			}else{
+				$this->session->set_flashdata('message', '<script>alert("User gagal diaktifkan !")</script>');
+			}
+			redirect('users','refresh');
+		}else{
+			$this->session->set_flashdata('message', '<script>alert("Anda tidak bisa mengaktifkan akun sendiri!")</script>');
+			redirect('users','refresh');
+		}
+	}
 }
 
 /* End of file Users.php */
