@@ -84,7 +84,7 @@ $route['kategori/updateAksi'] = 'admin/kategori/updateKategoriAksi';
 $route['kategori/hapus/(:num)'] = 'admin/kategori/deleteKategori/$1';
 
 // shop pada controllers user
-$route['shop/(:num)'] = 'shop/index/$1';
+// $route['shop/(:num)'] = 'shop/index/$1';
 // $route['shop/(:any)'] = 'shop/kategori/$1';
 
 // users pada controllers admin
