@@ -27,7 +27,7 @@
 											<a href="<?= base_url('shop/addToChart')  ?><?= $p['id']; ?>">
 												<i class="lnr lnr-cart"></i>
 											</a>
-											<a href="shop/details/<?= $p['id']; ?>">
+											<a href="<?= base_url('shop/details')  ?><?= $p['id']; ?>">
 												<i class="lnr lnr-eye"></i>
 											</a>
 										</div>
