@@ -113,7 +113,6 @@ class Users extends CI_Controller
 	{
 		$id = $this->input->post('id');
 		$nama = $this->input->post('nama');
-		$is_active = $this->input->post('is_active');
 
 		// cek apakah user mengganti password atau tidak
 		if($this->input->post('password') == null){
@@ -145,8 +144,7 @@ class Users extends CI_Controller
 			$data = [
 				'id' 		=> htmlspecialchars($id),
 				'nama' 		=> htmlspecialchars($this->input->post('nama')),
-				'password' 	=> $password,
-				'is_active' => htmlspecialchars($is_active),
+				'password' 	=> $password
 			];
 			$where = array('id' => $id);
 			$this->model_produk->update_data($where, $data, "users");

@@ -33,50 +33,6 @@
                   <?= form_error('password', '<div class="font-weight-bold text-danger ml-2 mt-2">', '</div>'); ?>
                 </div>
 
-                <div class="form-group">
-                  <label for="is_active">
-                    Status  
-                    <?php if ($d->is_active == 1): ?>
-                      <span class="btn btn-sm btn-success">Online</span>
-                    <?php else: ?>
-                      <span class="btn btn-sm btn-danger">Offline</span>
-                    <?php endif; ?>
-                   </label>
-                   <?php if ($d->is_active == 1): ?>
-
-                   <div class="form-radio">
-                      <label>
-                        <input name="is_active" value="1" type="radio" checked="">
-                        Aktif
-                      </label>
-                    </div>
-
-                    <div class="form-radio">
-                      <label>
-                        <input name="is_active" value="0" type="radio" >
-                        Tidak Aktif
-                      </label>
-                    </div>
-
-                  <?php else: ?>
-                    <div class="form-radio">
-                      <label>
-                        <input name="is_active" value="1" type="radio" >
-                        Aktif
-                      </label>
-                    </div>
-
-                    <div class="form-radio">
-                      <label>
-                        <input name="is_active" value="0" type="radio" checked="">
-                        Tidak Aktif
-                      </label>
-                    </div>
-                  <?php endif ?>
-                </div>
-
-
-
                 <?php endforeach ?>
                 <button style="cursor: pointer;" type="submit" class="btn btn-block btn-primary">SIMPAN</button>
               </form>
