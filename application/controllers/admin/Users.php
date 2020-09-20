@@ -125,9 +125,7 @@ class Users extends CI_Controller
 			'required' => 'Username wajib diisi !',
 			'max_length' => 'Jumlah karakter maksimal adalah 120 !',
 		]);
-		$this->form_validation->set_rules('password', 'password', 'trim|required', [
-			'required' => 'Password wajib diisi !'
-		]);
+		$this->form_validation->set_rules('password', 'password', 'trim');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->updateUser($id);
