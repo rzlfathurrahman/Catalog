@@ -33,7 +33,7 @@
                   <?= form_error('password', '<div class="font-weight-bold text-danger ml-2 mt-2">', '</div>'); ?>
                 </div>
 
-                <?php endforeach ?>
+                <?php endforeach; ?>
                 <button style="cursor: pointer;" type="submit" class="btn btn-block btn-primary">SIMPAN</button>
               </form>
            </div>
