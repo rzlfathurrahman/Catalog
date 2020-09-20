@@ -111,6 +111,10 @@ class Users extends CI_Controller
 
 	public function updateUserAksi()
 	{
+		$id = $this->input->post('id');
+		$nama = $this->input->post('nama');
+		$is_active = $this->input->post('is_active');
+
 		// cek apakah user mengganti password atau tidak
 		if($this->input->post('password') == null){
 			$password = $this->input->post('password_lama');
@@ -118,10 +122,12 @@ class Users extends CI_Controller
 			$password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 		}
 		
+		// cek yang diupdate data sendiri atau orang lain
+		if ($this->session->userdata('user_id') != $id) {
+			$this->session->set_flashdata('message', '<script>alert("Maaf anda tidak bisa merubah data orang lain !");</script>');
+			redirect('users','refresh');
+		}
 
-		$id = $this->input->post('id');
-		$nama = $this->input->post('nama');
-		$is_active = $this->input->post('is_active');
 
 		$this->form_validation->set_rules('nama', 'nama', 'trim|required|max_length[120]', [
 			'required' => 'Nama wajib diisi !',
