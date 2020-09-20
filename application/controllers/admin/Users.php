@@ -163,6 +163,7 @@ class Users extends CI_Controller
 				'message',
 				'<script>alert("Tidak bisa menghapus akun sendiri !")</script>'
 			);
+			redirect('users','refresh');
 		} else {
 			$this->model_users->deleteData($where, 'users');
 			$this->session->set_flashdata(
