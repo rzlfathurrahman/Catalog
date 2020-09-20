@@ -48,7 +48,8 @@
 								<?= form_close(); ?>
 							</td>
 							<td>
-								<?= anchor('shop/cartDestroy','<div class="btn btn-sm btn-danger btn-block">Hapus Keranjang</div>'); ?>
+
+								<?= anchor('shop/cartDestroy','<div class="btn btn-sm btn-danger btn-block" onclick="return confirm(\'Anda yakin ingin menghapus keranjang\')">Hapus Keranjang</div>'); ?>
 							</td>
 							<td>
 
