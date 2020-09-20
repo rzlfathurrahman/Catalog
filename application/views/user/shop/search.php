@@ -19,7 +19,7 @@
 		<div class="row flex-row-reverse justify-content-center">
 
 			<!-- left bar -->
-			<div class="col-lg-9">
+			<div class="col-lg-12">
 
 				<!-- All Product -->
 				<div class="row">
