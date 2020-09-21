@@ -1,3 +1,64 @@
+=============== CATALOG APP v.1.0 beta ================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+################
+Tentang Aplikasi
+###############
+
+Aplikasi ini adalah aplikasi catalog online berbasis web yang dibangun dengan codeigniter 3.
+Aplikasi ini tidak untuk diperjualbelikan, bisa dipakai gratis oleh siapapun! Tetapi boleh menerima pembayaran dari jasa instalasi. Aplikasi ini masih dalam tahap pengembangan sehingga ,mungkin masih terdapat banyak bug. Ditujukan untuk pembelajaran dan usaha menengah kebawah / umkm. Terintegrasi dengan chat pada whatsapp. Tampilan untuk user sudah responsive (belum sempurna). Disarankan membuka halaman admin pada mode desktop. APlikasi ini sudah terintegrasi dengan git.
+
+TIDAK DIPEKERNANKAN UNTUK MENGUBAH FOOTER PADA HALAMAN PEMBELI / USER
+
+#############
+Tentang Saya
+#############
+
+Saya Rizal Fathur Rahman, Pelajar di SMK MA'ARIF NU 1 AJIBARANG jurusan RPL. Memiliki pekerjaan sampingan sebagai web developer.
+Untuk pemesanan atau donasi bisa konfirmasi ke wa saya https://api.whatsapp.com/send?phone=6283844514417
+
+################
+Fitur Aplikasi :
+###############
+
+Admin
+
+1. Login Admin
+2. Dashboard Admin
+3. Control Panel
+ ==== Produk ====
+4. Daftar Produk
+5. Tambah Produk (dengan gambar)
+6. Detail Produk
+7. Update Produk
+8. Hapus Produk
+ ==== Kategori Produk (masih banyak bug tidak disarankan untuk digunakan) ===
+9. Tambah Kategori
+10. Daftar Kategori
+11. Hapus Kategori
+ ==== Invoice ===
+12. Daftar Invoice
+13. Detail Invoice
+ === Contact ====
+14. Daftar saran/pesan/kririk dari user
+15. Detail Pesan
+16. Balas Pesan (tidak disarankan digunakan karena ada bug)
+ ==== Users / Admin ===
+17. Tambah User / admin
+18. Update User / admin
+19. Hapus User / admin
+20. Ganti status akun user/admin
+21. Logout
+
+Pembeli
+
+1. Lihat semua produk
+2. Cari Produk
+3. Troli (tambah,hapus,update)
+4. Detail Produk
+5. Knfirmasi pembayaran hanya dengan isi data diri serta konfirmasi ke wa
+5. Kirim pesan ke admin
+
 ###################
 What is CodeIgniter
 ###################
@@ -26,25 +87,8 @@ You can find a list of all changes for each release in the `user
 guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
 
 *******************
-Server Requirements
+License CODEIGNITER
 *******************
-
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
 
 Please see the `license
 agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
@@ -69,9 +113,9 @@ Acknowledgement
 The CodeIgniter team would like to thank EllisLab, all the
 contributors to the CodeIgniter project and you, the CodeIgniter user.
 
-******************************************************
+****************************************************************
 CREDITS - Thanks To Developers Who Developed Best HTML Templates
-******************************************************
+****************************************************************
 1. Fashiop - (https://colorlib.com) With These Components :
 	a. Pexels - http://www.pexels.com 
 	b. jQuery - http://jquery.com/ 
@@ -84,3 +128,14 @@ CREDITS - Thanks To Developers Who Developed Best HTML Templates
 	i. Linear Icons - https://linearicons.com/ 
 2. Codeigniter - https://codeigniter.com/
 3. StarAdmin Free-Bootstrap-Admin-Template - https://www.bootstrapdash.com
+4. And all plugin on this app
+
+**********
+THANKS TO 
+**********
+1. ALLAH SWT
+2. Sandhika Galih - Web Programming Unpas (for implements code)
+3. Framework Indonesia (for implements code)
+4. Whatsapp api
+5. Git (for version control)
+And other ....
