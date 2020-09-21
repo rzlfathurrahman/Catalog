@@ -1,3 +1,4 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -96,6 +97,7 @@ $route['users/delete/(:num)'] = 'admin/users/deleteUser/$1';
 $route['users/updateAksi'] = 'admin/users/updateUserAksi';
 $route['users/deactivateUser/(:num)'] = 'admin/users/deactivateUser/$1';
 $route['users/activateUser/(:num)'] = 'admin/users/activateUser/$1';
+$route['users/setUserStatus/(:num)/(:any)'] = 'admin/users/setUserStatus/$1/$2';
 
 
 // search pada controller shop
