@@ -174,44 +174,83 @@ class Users extends CI_Controller
 		}
 	}
 
-	public function deactivateUser($id)
+	// public function deactivateUser($id)
+	// {
+	// 	$query = $this->db->query("SELECT `is_active` FROM users WHERE id = $id")->result_array();
+	// 	$is_active = $query[0]['is_active'];
+
+	// 	// cek apakah user berstatus aktif atau tidak
+	// 	if ($is_active == 1 && $this->session->userdata('user_id') != $id) {
+	// 		$query = $this->db->query("UPDATE `users` SET `is_active` = '0' WHERE `users`.`id` = $id;");
+	// 		if ($query) {
+	// 			$this->session->set_flashdata('message', '<script>alert("User berhasil dinonaktifkan !")</script>');
+	// 		}else{
+	// 			$this->session->set_flashdata('message', '<script>alert("User gagal dinonaktifkan !")</script>');
+	// 		}
+	// 		redirect('users','refresh');
+	// 	}else{
+	// 		$this->session->set_flashdata('message', '<script>alert("Anda tidak bisa menonaktifkan akun sendiri!")</script>');
+	// 		redirect('users','refresh');
+	// 	}
+	// }
+
+	// public function activateUser($id)
+	// {
+	// 	$query = $this->db->query("SELECT `is_active` FROM users WHERE id = $id")->result_array();
+	// 	$is_active = $query[0]['is_active'];
+
+	// 	// cek apakah user berstatus aktif atau tidak
+	// 	if ($is_active == 0 && $this->session->userdata('user_id') != $id) {
+	// 		$query = $this->db->query("UPDATE `users` SET `is_active` = '1' WHERE `users`.`id` = $id;");
+	// 		if ($query) {
+	// 			$this->session->set_flashdata('message', '<script>alert("User berhasil diaktifkan !")</script>');
+	// 		}else{
+	// 			$this->session->set_flashdata('message', '<script>alert("User gagal diaktifkan !")</script>');
+	// 		}
+	// 		redirect('users','refresh');
+	// 	}else{
+	// 		$this->session->set_flashdata('message', '<script>alert("Anda tidak bisa mengaktifkan akun sendiri!")</script>');
+	// 		redirect('users','refresh');
+	// 	}
+	// }
+
+	public function setUserStatus($id,$user)
 	{
 		$query = $this->db->query("SELECT `is_active` FROM users WHERE id = $id")->result_array();
 		$is_active = $query[0]['is_active'];
-
-		// cek apakah user berstatus aktif atau tidak
-		if ($is_active == 1 && $this->session->userdata('user_id') != $id) {
-			$query = $this->db->query("UPDATE `users` SET `is_active` = '0' WHERE `users`.`id` = $id;");
-			if ($query) {
-				$this->session->set_flashdata('message', '<script>alert("User berhasil dinonaktifkan !")</script>');
+		$username = $user;
+		// cek apakah user lain atau bukan
+		if ($this->session->userdata('username') != $username) {
+			// cek apakah user aktif atau tidak
+			if ($is_active == 0) {
+				// tidak aktif
+				$query = $this->db->query("UPDATE `users` SET `is_active` = '1' WHERE `users`.`id` = $id;");
+				// cek query berhasil atau tidak
+				if ($query) {
+					$this->session->set_flashdata('message', '<script>alert("User berhasil diaktifkan !")</script>');
+				}else{
+					$this->session->set_flashdata('message', '<script>alert("User gagal diaktifkan !")</script>');
+				}
+			}elseif($is_active == 1){
+				// aktif
+				$query = $this->db->query("UPDATE `users` SET `is_active` = '0' WHERE `users`.`id` = $id;");
+				// cek query berhasil atau tidak
+				if ($query) {
+					$this->session->set_flashdata('message', '<script>alert("User berhasil dinonaktifkan !")</script>');
+				}else{
+					$this->session->set_flashdata('message', '<script>alert("User gagal dinonaktifkan !")</script>');
+				}
 			}else{
-				$this->session->set_flashdata('message', '<script>alert("User gagal dinonaktifkan !")</script>');
+				$this->session->set_flashdata('message', '<script>alert("Kesalahan! Status user tak diketahui")</script>');
 			}
-			redirect('users','refresh');
-		}else{
-			$this->session->set_flashdata('message', '<script>alert("Anda tidak bisa menonaktifkan akun sendiri!")</script>');
-			redirect('users','refresh');
-		}
-	}
 
-	public function activateUser($id)
-	{
-		$query = $this->db->query("SELECT `is_active` FROM users WHERE id = $id")->result_array();
-		$is_active = $query[0]['is_active'];
-
-		// cek apakah user berstatus aktif atau tidak
-		if ($is_active == 0 && $this->session->userdata('user_id') != $id) {
-			$query = $this->db->query("UPDATE `users` SET `is_active` = '1' WHERE `users`.`id` = $id;");
-			if ($query) {
-				$this->session->set_flashdata('message', '<script>alert("User berhasil diaktifkan !")</script>');
-			}else{
-				$this->session->set_flashdata('message', '<script>alert("User gagal diaktifkan !")</script>');
-			}
-			redirect('users','refresh');
+		// jika yang diubah milik sendiri
 		}else{
-			$this->session->set_flashdata('message', '<script>alert("Anda tidak bisa mengaktifkan akun sendiri!")</script>');
-			redirect('users','refresh');
+			$this->session->set_flashdata('message', '<script>alert("Kesalahan! Anda tak bisa mengubah milik sendiri")</script>');
+
 		}
+		// kembalikan ke halaman users
+		redirect('users','refresh');
 	}
 }
 
