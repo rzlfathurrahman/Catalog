@@ -42,9 +42,9 @@
                       <td><?= $p['username']; ?></td>
                       <td>
                         <?php if ($p['is_active'] == 1) : ?>
-                          <?= anchor('users/deactivateUser/'.$p['id'], '<span onclick="return confirm(\' Anda yakin ingin menonaktifkan user ini ? \')" class="btn btn-sm btn-success">Online</span>');  ?>
+                          <?= anchor('users/setUserStatus/'.$p['id'].'/'.$p['username'], '<span onclick="return confirm(\' Anda yakin ingin menonaktifkan user ini ? \')" class="btn btn-sm btn-success">Online</span>');  ?>
                         <?php else : ?>
-                          <?= anchor('users/activateUser/'.$p['id'], '<span onclick="return confirm(\' Anda yakin ingin mengaktifkan user ini ? \')" class="btn btn-sm btn-danger">Offline</span>');  ?>
+                          <?= anchor('users/setUserStatus/'.$p['id'].'/'.$p['username'], '<span onclick="return confirm(\' Anda yakin ingin mengaktifkan user ini ? \')" class="btn btn-sm btn-danger">Offline</span>');  ?>
                         <?php endif; ?>
                       </td>
                       <td>
